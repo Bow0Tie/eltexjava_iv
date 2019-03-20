@@ -2,7 +2,7 @@ import java.util.UUID;
 
 abstract public class ClassAbstract implements ICrudAction {
     public static int count;
-    public UUID ID;
+    protected UUID ID;
     private String name;
     private float price;
     private String firm;
