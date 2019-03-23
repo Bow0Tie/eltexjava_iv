@@ -1,3 +1,5 @@
+package Ru.eltex.app.Labs;
+
 import java.util.UUID;
 
 public class Coffee extends Napitki {
@@ -18,7 +20,7 @@ public class Coffee extends Napitki {
 
     @Override
     public void create() {
-        count++;
+        Napitki.count++;
         setName("Jardin");
         setCountry("russia");
         setFirm("ORIMI");
@@ -28,7 +30,7 @@ public class Coffee extends Napitki {
 
     @Override
     public void read() {
-        System.out.println("ID товара " + ID + "/nНазвание " + getName() + "/nЦена " + getPrice() + "/nСтрана производитель " + getCountry() + "/nФирма " + getFirm() + "/nТип зерен " + CoffeeType);
+        System.out.println("ID товара " + ID + "\nНазвание " + getName() + "\nЦена " + getPrice() + "\nСтрана производитель " + getCountry() + "\nФирма " + getFirm() + "\nТип зерен " + CoffeeType);
     }
 
     @Override
@@ -48,7 +50,7 @@ public class Coffee extends Napitki {
 
     @Override
     public void delete() {
-        count--;
+        Napitki.count--;
         setName(null);
         setCountry(null);
         setFirm(null);

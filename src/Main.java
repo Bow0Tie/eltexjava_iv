@@ -1,3 +1,7 @@
+import Ru.eltex.app.Labs.Coffee;
+import Ru.eltex.app.Labs.Napitki;
+import Ru.eltex.app.Labs.Tee;
+
 import java.util.ArrayList;
 
 public class Main {
@@ -6,12 +10,12 @@ public class Main {
        int objectnum = Integer.parseInt(args[0]);
         int i;
         ArrayList<Napitki> Objects = new ArrayList<>();
-        if(args[1] == "Coffee"){
+        if(args[1].equals("Ru.eltex.app.Labs.Coffee")){
             for (i = 0;i != objectnum;i++){
                 Objects.add(new Coffee());
            }
         }
-        else{
+        else if(args[1].equals("Ru.eltex.app.Labs.Tee")){
             for (i = 0;i != objectnum;i++){
                 Objects.add(new Tee());
             }
@@ -22,5 +26,6 @@ public class Main {
         for(Napitki schitivaemiy: Objects){
             schitivaemiy.read();
         }
+        System.out.println(args[1]);
     }
 }
