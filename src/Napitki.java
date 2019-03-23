@@ -1,13 +1,14 @@
+import java.util.Scanner;
 import java.util.UUID;
 
-abstract public class ClassAbstract implements ICrudAction {
+abstract public class Napitki implements ICrudAction {
     public static int count;
     protected UUID ID;
     private String name;
     private float price;
     private String firm;
     private String country;
-
+    Scanner sc = new Scanner(System.in);
     public String getName() {
         return name;
     }
