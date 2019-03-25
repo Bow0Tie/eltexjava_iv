@@ -6,9 +6,9 @@ public class Order {
     private Date createtime;
     private Date waittime;
 
-    long a = 0; // Начальное значение диапазона - "от"
-    long b = 7200000; // Конечное значение диапазона - "до", 7200000 = 2 часа
-    long random_time = a + (long) (Math.random() * b);
+    private long a = 0; // Начальное значение диапазона - "от"
+    private long b = 7200000; // Конечное значение диапазона - "до", 7200000 = 2 часа
+    private long random_time = a + (long) (Math.random() * b);
 
     public Order() {
         status = false;
