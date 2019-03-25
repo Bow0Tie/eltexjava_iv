@@ -10,12 +10,12 @@ public class Main {
        int objectnum = Integer.parseInt(args[0]);
         int i;
         ArrayList<Napitki> Objects = new ArrayList<>();
-        if(args[1].equals("Ru.eltex.app.Labs.Coffee")){
+        if(args[1].equals("Coffee")){
             for (i = 0;i != objectnum;i++){
                 Objects.add(new Coffee());
            }
         }
-        else if(args[1].equals("Ru.eltex.app.Labs.Tee")){
+        else if(args[1].equals("Tee")){
             for (i = 0;i != objectnum;i++){
                 Objects.add(new Tee());
             }
@@ -26,6 +26,5 @@ public class Main {
         for(Napitki schitivaemiy: Objects){
             schitivaemiy.read();
         }
-        System.out.println(args[1]);
     }
 }
