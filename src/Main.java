@@ -9,22 +9,24 @@ public class Main {
     public static void main(String[] args) {
        int objectnum = Integer.parseInt(args[0]);
         int i;
-        ArrayList<Napitki> Objects = new ArrayList<>();
+        //ArrayList<Napitki> Objects = new ArrayList<>();
+        Cart cart = new Cart();
         if(args[1].equals("Coffee")){
             for (i = 0;i != objectnum;i++){
-                Objects.add(new Coffee());
+                cart.add(new Coffee());
            }
         }
         else if(args[1].equals("Tee")){
             for (i = 0;i != objectnum;i++){
-                Objects.add(new Tee());
+                cart.add(new Tee());
             }
         }
-        for(Napitki zapolnyaemiy: Objects) {
-            zapolnyaemiy.update();
-        }
-        for(Napitki schitivaemiy: Objects){
-            schitivaemiy.read();
-        }
+//        for(Napitki zapolnyaemiy: Objects) {
+//            zapolnyaemiy.update();
+//        }
+//        for(Napitki schitivaemiy: Objects){
+//            schitivaemiy.read();
+//        }
+
     }
 }
