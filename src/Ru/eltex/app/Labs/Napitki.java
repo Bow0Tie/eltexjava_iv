@@ -42,5 +42,9 @@ abstract public class Napitki implements ICrudAction {
     public void setCountry(String country) {
         this.country = country;
     }
+
+    public UUID getID() {
+        return ID;
+    }
 }
 

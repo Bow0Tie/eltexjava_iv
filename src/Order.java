@@ -1,4 +1,4 @@
-import java.util.Date;
+import java.sql.Date;
 
 public class Order {
 
@@ -6,13 +6,33 @@ public class Order {
     private Date createtime;
     private Date waittime;
 
+    private Cart cart;
+    private Credentials credentials;
+
     private long a = 0; // Начальное значение диапазона - "от"
     private long b = 7200000; // Конечное значение диапазона - "до", 7200000 = 2 часа
     private long random_time = a + (long) (Math.random() * b);
 
-    public Order() {
+    public Order(Cart cart, Credentials credentials) {
         status = false;
-        createtime = new Date();
+        createtime = new Date(System.currentTimeMillis());
         waittime = new Date(createtime.getTime() + random_time);
+        this.cart = cart;
+        this.credentials = credentials;
+    }
+
+    public Date getWaittime() {
+        return waittime;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+    private void show(){
+        System.out.println("");
     }
 }
