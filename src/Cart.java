@@ -28,7 +28,7 @@ public class Cart {
         }
     return ("jopa");
     }
-    void showALL(){
+    void showcart(){
         for(Napitki etot: cart){
             etot.read();
         }

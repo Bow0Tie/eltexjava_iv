@@ -19,6 +19,9 @@ public class Credentials {
         this.patronymic = patronymic;
         this.e_mail = e_mail;
     }
+    void showcredentials(){
+        System.out.println("ID пользователя " + id + "\nИмя " + name + "\nФамилия " + surname + "\nОтчество " + patronymic + "\nE-mail " + e_mail);
+    }
 
     public UUID getId() {
         return id;
@@ -55,4 +58,5 @@ public class Credentials {
     public void setE_mail(String e_mail) {
         this.e_mail = e_mail;
     }
+
 }

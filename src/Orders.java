@@ -1,6 +1,5 @@
 
 import java.util.LinkedList;
-import java.util.List;
 
 public class Orders {
 
@@ -21,6 +20,11 @@ public class Orders {
             if (order.isStatus()){
                 Orders.remove();
             }
+        }
+    }
+    private void showorders(){
+        for (Order tyt: Orders){
+            tyt.showorder();
         }
     }
 }
