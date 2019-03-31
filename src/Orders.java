@@ -11,7 +11,7 @@ public class Orders {
     }
     void complitecheck(){
         for(Order order: Orders){
-            if (order.getWaittime().getTime() > System.currentTimeMillis()){
+            if (System.currentTimeMillis() >= order.getWaittime().getTime()){
                 order.setStatus(true);
             }
         }

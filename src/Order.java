@@ -9,7 +9,7 @@ public class Order {
     private Cart cart;
     private Credentials credentials;
 
-    private long a = 0; // Начальное значение диапазона - "от"
+    private long a = 3600000; // Начальное значение диапазона - "от"
     private long b = 7200000; // Конечное значение диапазона - "до", 7200000 = 2 часа
     private long random_time = a + (long) (Math.random() * b);
 
