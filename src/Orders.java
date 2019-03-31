@@ -5,25 +5,25 @@ public class Orders {
 
     private LinkedList<Order> Orders = new LinkedList<>();
 
-    private void makepurchase(Credentials credentials, Cart cart) {
+    void makepurchase(Credentials credentials, Cart cart) {
 
         Orders.add(new Order(cart, credentials));
     }
-    private void complitecheck(){
+    void complitecheck(){
         for(Order order: Orders){
             if (order.getWaittime().getTime() > System.currentTimeMillis()){
                 order.setStatus(true);
             }
         }
     }
-    private void delete(){
+    void delete(){
         for(Order order: Orders){
             if (order.isStatus()){
                 Orders.remove();
             }
         }
     }
-    private void showorders(){
+    void showorders(){
         for (Order tyt: Orders){
             tyt.showorder();
         }

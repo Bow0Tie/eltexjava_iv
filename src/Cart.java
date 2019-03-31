@@ -12,6 +12,7 @@ public class Cart {
     void add(Napitki obj){
         cart.add(obj);
         uuids.add(obj.getID());
+        System.out.println(saerch(obj.getID()));
     }
     void delete(Napitki obj){
         cart.remove(obj);
@@ -28,6 +29,11 @@ public class Cart {
     void showcart(){
         for(Napitki etot: cart){
             etot.read();
+        }
+    }
+    void zapolnit(){
+        for(Napitki zapolnyaemiy: cart) {
+            zapolnyaemiy.create();
         }
     }
 }

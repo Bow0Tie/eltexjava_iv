@@ -30,9 +30,8 @@ public class Main {
                 test.cart2.add(new Tee());
             }
         }
-        for(Napitki zapolnyaemiy: test.cart1.) {
-            zapolnyaemiy.create();
-        }
+        test.tesing();
+
 //        for(Napitki schitivaemiy: Objects){
 //            schitivaemiy.read();
 //        }
