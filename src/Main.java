@@ -9,21 +9,30 @@ public class Main {
     public static void main(String[] args) {
        int objectnum = Integer.parseInt(args[0]);
         int i;
-        //ArrayList<Napitki> Objects = new ArrayList<>();
-        Cart cart = new Cart();
+        testingarea test = new testingarea();
         if(args[1].equals("Coffee")){
             for (i = 0;i != objectnum;i++){
-                cart.add(new Coffee());
+                test.cart1.add(new Coffee());
            }
         }
         else if(args[1].equals("Tee")){
             for (i = 0;i != objectnum;i++){
-                cart.add(new Tee());
+                test.cart1.add(new Tee());
             }
         }
-//        for(Napitki zapolnyaemiy: Objects) {
-//            zapolnyaemiy.update();
-//        }
+        if(args[1].equals("Tee")){
+            for (i = 0;i != objectnum;i++){
+                test.cart2.add(new Coffee());
+            }
+        }
+        else if(args[1].equals("Coffee")){
+            for (i = 0;i != objectnum;i++){
+                test.cart2.add(new Tee());
+            }
+        }
+        for(Napitki zapolnyaemiy: test.cart1.) {
+            zapolnyaemiy.create();
+        }
 //        for(Napitki schitivaemiy: Objects){
 //            schitivaemiy.read();
 //        }

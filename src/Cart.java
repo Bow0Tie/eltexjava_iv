@@ -22,11 +22,8 @@ public class Cart {
             if (uuid.equals(id)){
                 return("Имеется");
             }
-            else {
-                return("Нету");
-            }
         }
-    return ("jopa");
+    return ("Нету");
     }
     void showcart(){
         for(Napitki etot: cart){
