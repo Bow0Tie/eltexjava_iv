@@ -1,3 +1,5 @@
+package Shop;
+
 import java.util.UUID;
 
 public class Credentials {

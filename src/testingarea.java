@@ -1,5 +1,6 @@
-import Ru.eltex.app.Labs.Coffee;
-import Ru.eltex.app.Labs.Tee;
+import Shop.Cart;
+import Shop.Credentials;
+import Shop.Orders;
 
 import java.util.UUID;
 
@@ -26,6 +27,6 @@ public class testingarea {
         orders.delete();
         System.out.println("Удалены готовые");
         orders.showorders();
-        cart1.saerch(searchID);
+        System.out.println(cart1.saerch(searchID));
     }
 }
