@@ -1,4 +1,4 @@
-package Thread;
+package Ru.eltex.app.Labs.Thread;
 
 public class ACheck implements Runnable {
 

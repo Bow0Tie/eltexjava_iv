@@ -1,8 +1,4 @@
-import Ru.eltex.app.Labs.Coffee;
-import Ru.eltex.app.Labs.Napitki;
-import Ru.eltex.app.Labs.Tee;
-
-import java.util.ArrayList;
+package Ru.eltex.app.Labs;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package Shop;
+package Ru.eltex.app.Labs.Shop;
 
 import java.util.UUID;
 

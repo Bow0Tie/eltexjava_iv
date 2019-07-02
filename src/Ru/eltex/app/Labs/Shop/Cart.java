@@ -1,4 +1,4 @@
-package Shop;
+package Ru.eltex.app.Labs.Shop;
 
 import Ru.eltex.app.Labs.Napitki;
 
@@ -26,7 +26,7 @@ public class Cart<T extends Napitki> {
             etot.read();
         }
     }
-    public void zapolnit(){
+    public synchronized void zapolnit(){
         for(T zapolnyaemiy: cart) {
             zapolnyaemiy.create();
         }

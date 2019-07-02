@@ -1,4 +1,4 @@
-package Shop;
+package Ru.eltex.app.Labs.Shop;
 
 import java.util.LinkedList;
 
@@ -6,7 +6,7 @@ public class Orders<T extends Order> {
 
     private LinkedList<T> Orders = new LinkedList<>();
 
-    public void makepurchase(Credentials credentials, Cart cart) {
+    public synchronized void makepurchase(Credentials credentials, Cart cart) {
 
         Orders.add((T)new Order(cart, credentials));
     }
@@ -28,5 +28,9 @@ public class Orders<T extends Order> {
         for (T tyt: Orders){
             tyt.showorder();
         }
+    }
+
+    public LinkedList<T> getOrders() {
+        return Orders;
     }
 }

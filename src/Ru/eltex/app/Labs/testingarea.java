@@ -1,8 +1,8 @@
-import Shop.Cart;
-import Shop.Credentials;
-import Shop.Generator;
-import Shop.Orders;
+package Ru.eltex.app.Labs;
 
+import Ru.eltex.app.Labs.Shop.Cart;
+import Ru.eltex.app.Labs.Shop.Credentials;
+import Ru.eltex.app.Labs.Shop.Orders;
 import java.util.UUID;
 
 public class testingarea {
@@ -36,11 +36,11 @@ public class testingarea {
         g1.start();
     }
 
-    public Orders getOrders() {
+    public synchronized Orders getOrders() {
         return orders;
     }
 
-    public void setOrders(Orders orders) {
+    public synchronized void setOrders(Orders orders) {
         this.orders = orders;
     }
 }
