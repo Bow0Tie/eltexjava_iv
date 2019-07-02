@@ -1,5 +1,6 @@
 import Shop.Cart;
 import Shop.Credentials;
+import Shop.Generator;
 import Shop.Orders;
 
 import java.util.UUID;
@@ -12,6 +13,10 @@ public class testingarea {
     Credentials Yana = new Credentials("Chertkova","Yana","Viktorovna","322@mail.ru");
     Orders orders = new Orders();
     UUID searchID = UUID.randomUUID();
+    Generator g1 = new Generator();
+    Generator g2 = new Generator();
+    Generator g3 = new Generator();
+    Generator g4 = new Generator();
 
     void tesing(){
         cart1.zapolnit();
@@ -28,5 +33,14 @@ public class testingarea {
         System.out.println("Удалены готовые");
         orders.showorders();
         System.out.println(cart1.saerch(searchID));
+        g1.start();
+    }
+
+    public Orders getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Orders orders) {
+        this.orders = orders;
     }
 }
