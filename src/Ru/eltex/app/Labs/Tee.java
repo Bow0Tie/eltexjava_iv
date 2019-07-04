@@ -1,6 +1,8 @@
 package Ru.eltex.app.Labs;
 
-import Ru.eltex.app.Labs.Thread.packtypeTee;
+import Ru.eltex.app.Labs.Enums.Names;
+import Ru.eltex.app.Labs.Enums.packtypeTee;
+import Ru.eltex.app.Labs.Enums.Country;
 
 import java.util.UUID;
 
@@ -8,14 +10,15 @@ import java.util.UUID;
 
 public class Tee extends Napitki {
     private packtypeTee PackType;
-    private packtypeTee packtypeTee;
 
     public Tee() {
         PackType = packtypeTee.getRandomPack();
+        setName(Names.getRandomName());
+        setCountry(Country.getRandomCountry());
         ID = UUID.randomUUID();
     }
 
-    public Tee(packtypeTee packtype,String name,String country,String firm, float price) {
+    public Tee(packtypeTee packtype,Names name,Country country,String firm, float price) {
         PackType = packtype;
         setName(name);
         setCountry(country);
@@ -27,8 +30,8 @@ public class Tee extends Napitki {
     @Override
     public void create() {
         count++;
-        setName("Tess");
-        setCountry("russia");
+        setName(Names.Бай_Хуа_Сянь_Цзы_Ангел_цветов);
+        setCountry(Country.Вьетнам);
         setFirm("ORIMI");
         setPrice(199.99f);
         PackType = packtypeTee.Бумажная_упаковка;

@@ -1,21 +1,24 @@
 package Ru.eltex.app.Labs;
 
+import Ru.eltex.app.Labs.Enums.Country;
+import Ru.eltex.app.Labs.Enums.Names;
+
 import java.util.Scanner;
 import java.util.UUID;
 
 abstract public class Napitki implements ICrudAction {
     public static int count;
     protected UUID ID;
-    private String name;
+    private Names name;
     private float price;
     private String firm;
-    private String country;
+    private Country country;
     Scanner sc = new Scanner(System.in);
-    public String getName() {
+    public Names getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(Names name) {
         this.name = name;
     }
 
@@ -35,11 +38,11 @@ abstract public class Napitki implements ICrudAction {
         this.firm = firm;
     }
 
-    public String getCountry() {
+    public Country getCountry() {
         return country;
     }
 
-    public void setCountry(String country) {
+    public void setCountry(Country country) {
         this.country = country;
     }
 

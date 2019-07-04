@@ -1,5 +1,7 @@
 package Ru.eltex.app.Labs;
 
+import Ru.eltex.app.Labs.Enums.Names;
+
 import java.util.UUID;
 
 public class Coffee extends Napitki {
@@ -9,7 +11,7 @@ public class Coffee extends Napitki {
         ID = UUID.randomUUID();
     }
 
-    public Coffee(String coffeeType,String name,String country,String firm, float price) {
+    public Coffee(String coffeeType, Names name, String country, String firm, float price) {
         CoffeeType = coffeeType;
         setName(name);
         setCountry(country);
@@ -21,7 +23,7 @@ public class Coffee extends Napitki {
     @Override
     public void create() {
         Napitki.count++;
-        setName("Jardin");
+        setName(Names.ЖОКЕЙ_традиционный);
         setCountry("russia");
         setFirm("ORIMI");
         setPrice(299.99f);
@@ -35,17 +37,17 @@ public class Coffee extends Napitki {
 
     @Override
     public void update() {
-        System.out.println("Введите название");
-        setName(sc.nextLine());
-        System.out.println("Страна производитель");
-        setCountry(sc.nextLine());
-        System.out.println("Фирма производитель");
-        setFirm(sc.nextLine());
-        System.out.println("Цена кофе");
-        setPrice(sc.nextFloat());
-        sc.nextLine();
-        System.out.println("Тип кофейных зерен");
-        CoffeeType = sc.nextLine();
+//        System.out.println("Введите название");
+//        setName(sc.nextLine());
+//        System.out.println("Страна производитель");
+//        setCountry(sc.nextLine());
+//        System.out.println("Фирма производитель");
+//        setFirm(sc.nextLine());
+//        System.out.println("Цена кофе");
+//        setPrice(sc.nextFloat());
+//        sc.nextLine();
+//        System.out.println("Тип кофейных зерен");
+//        CoffeeType = sc.nextLine();
     }
 
     @Override

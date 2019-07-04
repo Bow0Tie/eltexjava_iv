@@ -1,4 +1,4 @@
-package Ru.eltex.app.Labs.Thread;
+package Ru.eltex.app.Labs.Enums;
 
 import java.util.Random;
 
