@@ -1,14 +1,21 @@
 package Ru.eltex.app.Labs;
 
+import Ru.eltex.app.Labs.Thread.packtypeTee;
+
 import java.util.UUID;
 
+
+
 public class Tee extends Napitki {
-    private String PackType;
+    private packtypeTee PackType;
+    private packtypeTee packtypeTee;
+
     public Tee() {
+        PackType = packtypeTee.getRandomPack();
         ID = UUID.randomUUID();
     }
 
-    public Tee(String packtype,String name,String country,String firm, float price) {
+    public Tee(packtypeTee packtype,String name,String country,String firm, float price) {
         PackType = packtype;
         setName(name);
         setCountry(country);
@@ -24,7 +31,7 @@ public class Tee extends Napitki {
         setCountry("russia");
         setFirm("ORIMI");
         setPrice(199.99f);
-        PackType = "vacuum";
+        PackType = packtypeTee.Бумажная_упаковка;
     }
 
     @Override
@@ -34,17 +41,17 @@ public class Tee extends Napitki {
 
     @Override
     public void update() {
-        System.out.println("Введите название");
-        setName(sc.nextLine());
-        System.out.println("Страна производитель");
-        setCountry(sc.nextLine());
-        System.out.println("Фирма производитель");
-        setFirm(sc.nextLine());
-        System.out.println("Цена чая");
-        setPrice(sc.nextFloat());
-        sc.nextLine();
-        System.out.println("Тип упаковки");
-        PackType = sc.nextLine();
+//        System.out.println("Введите название");
+//        setName(sc.nextLine());
+//        System.out.println("Страна производитель");
+//        setCountry(sc.nextLine());
+//        System.out.println("Фирма производитель");
+//        setFirm(sc.nextLine());
+//        System.out.println("Цена чая");
+//        setPrice(sc.nextFloat());
+//        sc.nextLine();
+//        System.out.println("Тип упаковки");
+//        PackType = sc.nextLine();
     }
 
     @Override
