@@ -1,6 +1,7 @@
 package Ru.eltex.app.Labs;
 
 import Ru.eltex.app.Labs.Enums.Country;
+import Ru.eltex.app.Labs.Enums.Firms;
 import Ru.eltex.app.Labs.Enums.Names;
 
 import java.util.Scanner;
@@ -11,7 +12,7 @@ abstract public class Napitki implements ICrudAction {
     protected UUID ID;
     private Names name;
     private float price;
-    private String firm;
+    private Firms firm;
     private Country country;
     Scanner sc = new Scanner(System.in);
     public Names getName() {
@@ -30,11 +31,11 @@ abstract public class Napitki implements ICrudAction {
         this.price = price;
     }
 
-    public String getFirm() {
+    public Firms getFirm() {
         return firm;
     }
 
-    public void setFirm(String firm) {
+    public void setFirm(Firms firm) {
         this.firm = firm;
     }
 
