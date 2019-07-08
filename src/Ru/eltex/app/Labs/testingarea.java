@@ -21,7 +21,7 @@ public class testingarea {
     Generator g3 = new Generator();
     Generator g4 = new Generator();
 
-    void tesing(){
+    void tesing() throws InterruptedException {
         cart1.zapolnit();
         System.out.println("Заполнилась первая карзина");
         cart2.zapolnit();
@@ -36,7 +36,26 @@ public class testingarea {
         System.out.println("Удалены готовые");
         orders.showorders();
         System.out.println(cart1.saerch(searchID));
+        System.out.println("Запускаем первый генератор");
         g1.start();
+        System.out.println("Ждем 50 милисекунд");
+        Thread.sleep(50);
+        System.out.println("Запускаем второй генератор");
+        g2.start();
+        System.out.println("Ждем 50 милисекунд");
+        Thread.sleep(50);
+        System.out.println("Запускаем третий генератор");
+        g3.start();
+        System.out.println("Ждем 50 милисекунд");
+        Thread.sleep(50);
+        System.out.println("Запускаем четвертый генератор");
+        g4.start();
+        g1.ostonovis();
+        g2.ostonovis();
+        g3.ostonovis();
+        g4.ostonovis();
+        orders.showorders();
+
     }
 
     public synchronized Orders getOrders() {

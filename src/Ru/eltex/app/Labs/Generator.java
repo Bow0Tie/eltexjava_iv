@@ -14,9 +14,8 @@ public class Generator extends Thread {
 
     boolean finish = false;
     int i = 0;
-    testingarea main = new testingarea();
-    Orders localorders = main.getOrders();
-
+    public testingarea testing = new testingarea();
+    Orders localorders = testing.getOrders();
 
     @Override
     public void run() {
@@ -25,7 +24,10 @@ public class Generator extends Thread {
         i++;
         int num = 1 + rnd.nextInt(20000 - 1 + 1);
         localorders.makepurchase(new Credentials(Surname.getSurname(), Imena.getImena(), Otchestva.getOtchestva(), num + "@mail.ru"), new Cart());
-        if (i == 10){finish = true;}
         }
+    }
+    public void ostonovis(){
+        finish = true;
+        testing.setOrders(localorders);
     }
 }

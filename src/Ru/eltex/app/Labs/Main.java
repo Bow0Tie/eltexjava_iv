@@ -26,7 +26,11 @@ public class Main {
                 test.cart2.add(new Tee());
             }
         }
-        test.tesing();
+        try {
+            test.tesing();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
 //        for(Napitki schitivaemiy: Objects){
 //            schitivaemiy.read();

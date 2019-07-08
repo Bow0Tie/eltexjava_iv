@@ -14,7 +14,7 @@ abstract public class Napitki implements ICrudAction {
     private float price;
     private Firms firm;
     private Country country;
-    Scanner sc = new Scanner(System.in);
+    //Scanner sc = new Scanner(System.in);
     public Names getName() {
         return name;
     }
