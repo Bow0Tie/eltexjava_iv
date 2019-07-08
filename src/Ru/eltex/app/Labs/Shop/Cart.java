@@ -1,6 +1,7 @@
 package Ru.eltex.app.Labs.Shop;
 
 import Ru.eltex.app.Labs.Coffee;
+import Ru.eltex.app.Labs.Enums.*;
 import Ru.eltex.app.Labs.Napitki;
 import Ru.eltex.app.Labs.Tee;
 
@@ -10,15 +11,20 @@ public class Cart<T extends Napitki> {
 
     private List<T> cart = new ArrayList<>();
     private Set<UUID> uuids = new HashSet<>();
+    Random rnd = new Random(System.currentTimeMillis());
 
     public Cart() {
-        cart.add((T) new Coffee());
-        cart.add((T) new Coffee());
-        cart.add((T) new Tee());
+    }
+
+    public Cart(int num) {
+        for (int i = 0; i < num; i++) {
+            float price = 50 + rnd.nextInt(2000 - 50 + 1);
+            cart.add((T) new Coffee(CoffeeType.getCoffeeType(), Names.getRandomName(), Country.getRandomCountry(), Firms.getRandomFirms(),price));
+            cart.add((T) new Tee(packtypeTee.getRandomPack(), Names.getRandomName(),Country.getRandomCountry(),Firms.getRandomFirms(),price));
+        }
         for(T zapolnyaemiy: cart) {
             uuids.add(zapolnyaemiy.getID());
         }
-
     }
 
     public void add(T obj){

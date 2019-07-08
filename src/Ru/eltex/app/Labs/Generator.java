@@ -14,7 +14,7 @@ public class Generator extends Thread {
 
     boolean finish = false;
     int i = 0;
-    public testingarea testing = new testingarea();
+    testingarea testing = new testingarea();
     Orders localorders = testing.getOrders();
 
     @Override
@@ -23,11 +23,14 @@ public class Generator extends Thread {
         while (!finish){
         i++;
         int num = 1 + rnd.nextInt(20000 - 1 + 1);
-        localorders.makepurchase(new Credentials(Surname.getSurname(), Imena.getImena(), Otchestva.getOtchestva(), num + "@mail.ru"), new Cart());
+        int kol = 1 + rnd.nextInt(10 - 1 + 1);
+        localorders.makepurchase(new Credentials(Surname.getSurname(), Imena.getImena(), Otchestva.getOtchestva(), num + "@mail.ru"), new Cart(kol));
+        localorders.showorders();
+        //testing.setOrders(localorders);
         }
     }
     public void ostonovis(){
         finish = true;
-        testing.setOrders(localorders);
+        //testing.setOrders(localorders);
     }
 }
