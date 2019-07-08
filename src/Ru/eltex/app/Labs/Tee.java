@@ -19,8 +19,8 @@ public class Tee extends Napitki {
         setCountry(Country.getRandomCountry());
         setFirm(Firms.getRandomFirms());
         Random rnd = new Random(System.currentTimeMillis());
-// Получаем случайное число в диапазоне от min до max (включительно)
-        int number = 50 + rnd.nextInt(2000 - 50 + 1);
+        float price = 50 + rnd.nextInt(2000 - 50 + 1);
+        setPrice(price);
         ID = UUID.randomUUID();
     }
 

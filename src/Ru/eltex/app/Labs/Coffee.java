@@ -1,17 +1,25 @@
 package Ru.eltex.app.Labs;
 
-import Ru.eltex.app.Labs.Enums.Names;
+import Ru.eltex.app.Labs.Enums.*;
 
+import java.util.Random;
 import java.util.UUID;
 
 public class Coffee extends Napitki {
+    private CoffeeType CoffeeType;
 
-    private String CoffeeType;
     public Coffee() {
+        CoffeeType = Ru.eltex.app.Labs.Enums.CoffeeType.getCoffeeType();
+        setName(Names.getRandomName());
+        setCountry(Country.getRandomCountry());
+        setFirm(Firms.getRandomFirms());
+        Random rnd = new Random(System.currentTimeMillis());
+        float price = 50 + rnd.nextInt(2000 - 50 + 1);
+        setPrice(price);
         ID = UUID.randomUUID();
     }
 
-    public Coffee(String coffeeType, Names name, String country, String firm, float price) {
+    public Coffee(CoffeeType coffeeType, Names name, Country country, Firms firm, float price) {
         CoffeeType = coffeeType;
         setName(name);
         setCountry(country);
@@ -24,10 +32,10 @@ public class Coffee extends Napitki {
     public void create() {
         Napitki.count++;
         setName(Names.ЖОКЕЙ_традиционный);
-        setCountry("russia");
-        setFirm("ORIMI");
+        setCountry(Country.Бразилия);
+        setFirm(Firms.Molinari);
         setPrice(299.99f);
-        CoffeeType = "Arabica";
+        CoffeeType = Ru.eltex.app.Labs.Enums.CoffeeType.Арабика;
     }
 
     @Override

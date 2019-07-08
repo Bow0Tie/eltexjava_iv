@@ -1,5 +1,8 @@
 package Ru.eltex.app.Labs;
 
+import Ru.eltex.app.Labs.Enums.Imena;
+import Ru.eltex.app.Labs.Enums.Otchestva;
+import Ru.eltex.app.Labs.Enums.Surname;
 import Ru.eltex.app.Labs.Shop.Cart;
 import Ru.eltex.app.Labs.Shop.Credentials;
 import Ru.eltex.app.Labs.Shop.Orders;
@@ -9,8 +12,8 @@ public class testingarea {
 
     Cart cart1 = new Cart();
     Cart cart2 = new Cart();
-    Credentials Ivan = new Credentials("Gorbatenko","Ivan","Sergeevich","123@mail.ru");
-    Credentials Yana = new Credentials("Chertkova","Yana","Viktorovna","322@mail.ru");
+    Credentials Ivan = new Credentials(Surname.Gorbatenko, Imena.Ivan, Otchestva.Sergeevich,"123@mail.ru");
+    Credentials Yana = new Credentials(Surname.Chertkova, Imena.Yana, Otchestva.Viktorovna,"322@mail.ru");
     Orders orders = new Orders();
     UUID searchID = UUID.randomUUID();
     Generator g1 = new Generator();

@@ -1,20 +1,24 @@
 package Ru.eltex.app.Labs.Shop;
 
+import Ru.eltex.app.Labs.Enums.Imena;
+import Ru.eltex.app.Labs.Enums.Otchestva;
+import Ru.eltex.app.Labs.Enums.Surname;
+
 import java.util.UUID;
 
 public class Credentials {
 
     private UUID id;
-    private String surname;
-    private String name;
-    private String patronymic;
+    private Surname surname;
+    private Imena name;
+    private Otchestva patronymic;
     private String e_mail;
 
     public Credentials() {
         id = UUID.randomUUID();
     }
 
-    public Credentials(String surname, String name, String patronymic, String e_mail) {
+    public Credentials(Surname surname, Imena name, Otchestva patronymic, String e_mail) {
         id = UUID.randomUUID();
         this.surname = surname;
         this.name = name;
@@ -29,27 +33,27 @@ public class Credentials {
         return id;
     }
 
-    public String getSurname() {
+    public Surname getSurname() {
         return surname;
     }
 
-    public void setSurname(String surname) {
+    public void setSurname(Surname surname) {
         this.surname = surname;
     }
 
-    public String getName() {
+    public Imena getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(Imena name) {
         this.name = name;
     }
 
-    public String getPatronymic() {
+    public Otchestva getPatronymic() {
         return patronymic;
     }
 
-    public void setPatronymic(String patronymic) {
+    public void setPatronymic(Otchestva patronymic) {
         this.patronymic = patronymic;
     }
 

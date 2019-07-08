@@ -1,6 +1,8 @@
 package Ru.eltex.app.Labs.Shop;
 
+import Ru.eltex.app.Labs.Coffee;
 import Ru.eltex.app.Labs.Napitki;
+import Ru.eltex.app.Labs.Tee;
 
 import java.util.*;
 
@@ -8,6 +10,16 @@ public class Cart<T extends Napitki> {
 
     private List<T> cart = new ArrayList<>();
     private Set<UUID> uuids = new HashSet<>();
+
+    public Cart() {
+        cart.add((T) new Coffee());
+        cart.add((T) new Coffee());
+        cart.add((T) new Tee());
+        for(T zapolnyaemiy: cart) {
+            uuids.add(zapolnyaemiy.getID());
+        }
+
+    }
 
     public void add(T obj){
         cart.add(obj);
