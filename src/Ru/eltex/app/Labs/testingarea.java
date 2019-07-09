@@ -6,14 +6,15 @@ import Ru.eltex.app.Labs.Enums.Surname;
 import Ru.eltex.app.Labs.Shop.Cart;
 import Ru.eltex.app.Labs.Shop.Credentials;
 import Ru.eltex.app.Labs.Shop.Orders;
+
 import java.util.UUID;
 
 public class testingarea {
 
     Cart cart1 = new Cart(2);
     Cart cart2 = new Cart(2);
-    Credentials Ivan = new Credentials(Surname.Gorbatenko, Imena.Ivan, Otchestva.Sergeevich,"123@mail.ru");
-    Credentials Yana = new Credentials(Surname.Chertkova, Imena.Yana, Otchestva.Viktorovna,"322@mail.ru");
+    Credentials Ivan = new Credentials(Surname.Gorbatenko, Imena.Ivan, Otchestva.Sergeevich, "123@mail.ru");
+    Credentials Yana = new Credentials(Surname.Chertkova, Imena.Yana, Otchestva.Viktorovna, "322@mail.ru");
     private Orders orders = new Orders();
     UUID searchID = UUID.randomUUID();
     private static Generator g1 = new Generator();
@@ -26,7 +27,7 @@ public class testingarea {
 //        System.out.println("Заполнилась первая карзина");
 //        cart2.zapolnit();
 //        System.out.println("Заполнилась вторая карзина");
-        orders.makepurchase(Yana,cart2);
+        orders.makepurchase(Yana, cart2);
         System.out.println("Сформирован заказ для Яны");
 //        orders.makepurchase(Ivan,cart1);
 //        System.out.println("Сформирован заказ для Ивана");
@@ -60,11 +61,11 @@ public class testingarea {
 
     }
 
-    public Orders getOrders() {
+    public synchronized Orders getOrders() {
         return orders;
     }
 
-    public void setOrders(Orders orders) {
+    public synchronized void setOrders(Orders orders) {
         this.orders = orders;
     }
 }

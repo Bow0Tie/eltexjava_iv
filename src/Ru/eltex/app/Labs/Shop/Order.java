@@ -34,7 +34,8 @@ public class Order {
     public boolean isStatus() {
         return status;
     }
-    public void showorder(){
+
+    public void showorder() {
         System.out.println("Статус " + status + "\nВремя создания " + createtime + "\nВремя обработки " + waittime);
         cart.showcart();
         credentials.showcredentials();

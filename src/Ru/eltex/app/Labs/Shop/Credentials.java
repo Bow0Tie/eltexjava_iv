@@ -25,7 +25,8 @@ public class Credentials {
         this.patronymic = patronymic;
         this.e_mail = e_mail;
     }
-    void showcredentials(){
+
+    void showcredentials() {
         System.out.println("ID пользователя " + id + "\nИмя " + name + "\nФамилия " + surname + "\nОтчество " + patronymic + "\nE-mail " + e_mail);
     }
 

@@ -19,33 +19,36 @@ public class Cart<T extends Napitki> {
     public Cart(int num) {
         for (int i = 0; i < num; i++) {
             float price = 50 + rnd.nextInt(2000 - 50 + 1);
-            cart.add((T) new Coffee(CoffeeType.getCoffeeType(), Names.getRandomName(), Country.getRandomCountry(), Firms.getRandomFirms(),price));
-            cart.add((T) new Tee(packtypeTee.getRandomPack(), Names.getRandomName(),Country.getRandomCountry(),Firms.getRandomFirms(),price));
+            cart.add((T) new Coffee(CoffeeType.getCoffeeType(), Names.getRandomName(), Country.getRandomCountry(), Firms.getRandomFirms(), price));
+            cart.add((T) new Tee(packtypeTee.getRandomPack(), Names.getRandomName(), Country.getRandomCountry(), Firms.getRandomFirms(), price));
         }
-        for(T zapolnyaemiy: cart) {
+        for (T zapolnyaemiy : cart) {
             uuids.add(zapolnyaemiy.getID());
         }
     }
 
-    public void add(T obj){
+    public void add(T obj) {
         cart.add(obj);
         uuids.add(obj.getID());
         System.out.println(saerch(obj.getID()));
     }
-    public void delete(T obj){
+
+    public void delete(T obj) {
         cart.remove(obj);
     }
 
-    public boolean saerch(UUID id){
+    public boolean saerch(UUID id) {
         return uuids.contains(id);
     }
-    public void showcart(){
-        for(T etot: cart){
+
+    public void showcart() {
+        for (T etot : cart) {
             etot.read();
         }
     }
-    public synchronized void zapolnit(){
-        for(T zapolnyaemiy: cart) {
+
+    public synchronized void zapolnit() {
+        for (T zapolnyaemiy : cart) {
             zapolnyaemiy.create();
         }
     }

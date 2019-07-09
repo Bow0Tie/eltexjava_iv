@@ -9,7 +9,6 @@ import java.util.Random;
 import java.util.UUID;
 
 
-
 public class Tee extends Napitki {
     private packtypeTee PackType;
 
@@ -24,7 +23,7 @@ public class Tee extends Napitki {
         ID = UUID.randomUUID();
     }
 
-    public Tee(packtypeTee packtype,Names name,Country country,Firms firm, float price) {
+    public Tee(packtypeTee packtype, Names name, Country country, Firms firm, float price) {
         PackType = packtype;
         setName(name);
         setCountry(country);
