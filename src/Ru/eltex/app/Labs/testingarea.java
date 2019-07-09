@@ -27,8 +27,8 @@ public class testingarea {
 //        System.out.println("Заполнилась первая карзина");
 //        cart2.zapolnit();
 //        System.out.println("Заполнилась вторая карзина");
-        orders.makepurchase(Yana, cart2);
-        System.out.println("Сформирован заказ для Яны");
+//        orders.makepurchase(Yana, cart2);
+//        System.out.println("Сформирован заказ для Яны");
 //        orders.makepurchase(Ivan,cart1);
 //        System.out.println("Сформирован заказ для Ивана");
 //        orders.complitecheck();
@@ -37,10 +37,10 @@ public class testingarea {
 //        System.out.println("Удалены готовые");
 //        orders.showorders();
 //        System.out.println(cart1.saerch(searchID));
-        System.out.println("Запускаем первый генератор");
-        g1.start();
-        System.out.println("Ждем 1 милисекунд");
-        Thread.sleep(1);
+//        System.out.println("Запускаем первый генератор");
+//        g1.start();
+//        System.out.println("Ждем 1 милисекунд");
+//        Thread.sleep(1);
 //        System.out.println("Запускаем второй генератор");
 //        g2.start();
 //        System.out.println("Ждем 1 милисекунд");
@@ -53,7 +53,7 @@ public class testingarea {
 //        g4.start();
 //        System.out.println("Ждем 1 милисекунд");
 //        Thread.sleep(2);
-        g1.ostonovis();
+//        g1.ostonovis();
 //        g2.ostonovis();
 //        g3.ostonovis();
 //        g4.ostonovis();

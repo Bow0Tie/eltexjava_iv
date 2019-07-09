@@ -27,7 +27,7 @@ public class Orders<T extends Order> {
         }
     }
 
-    public void showorders() {
+    public synchronized void showorders() {
         for (T tyt : Orders) {
             tyt.showorder();
         }

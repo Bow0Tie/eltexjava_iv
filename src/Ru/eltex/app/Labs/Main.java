@@ -22,13 +22,26 @@ public class Main {
         int i;
         Cart cart2 = new Cart(2);
         Credentials Yana = new Credentials(Surname.Chertkova, Imena.Yana, Otchestva.Viktorovna, "322@mail.ru");
-        orders.makepurchase(Yana, cart2);
+        //orders.makepurchase(Yana, cart2);
         System.out.println("Сформирован заказ для Яны");
         System.out.println("Запускаем первый генератор");
         g1.start();
         System.out.println("Ждем 1 милисекунд");
         Thread.sleep(1);
+        g2.start();
+        System.out.println("Ждем 1 милисекунд");
+        Thread.sleep(1);
+        g3.start();
+        System.out.println("Ждем 1 милисекунд");
+        Thread.sleep(1);
+        g4.start();
+        System.out.println("Ждем 1 милисекунд");
+        Thread.sleep(1);
         g1.ostonovis();
+        g2.ostonovis();
+        g3.ostonovis();
+        g4.ostonovis();
+        Thread.sleep(200);
         orders.showorders();
 //        if(args[1].equals("Coffee")){
 //            for (i = 0;i != objectnum;i++){
