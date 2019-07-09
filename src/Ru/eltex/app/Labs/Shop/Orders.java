@@ -1,5 +1,6 @@
 package Ru.eltex.app.Labs.Shop;
 
+import java.sql.Time;
 import java.util.LinkedList;
 
 public class Orders<T extends Order> {
@@ -11,19 +12,21 @@ public class Orders<T extends Order> {
         Orders.add((T) new Order(cart, credentials));
     }
 
-    public void complitecheck() {
+    public synchronized void complitecheck() {
         for (T order : Orders) {
-            if (System.currentTimeMillis() >= order.getWaittime().getTime()) {
+            Time NowTime = new Time(System.currentTimeMillis());
+
+            if (NowTime.getTime() >= order.getWaittime().getTime()) {
                 order.setStatus(true);
             }
         }
     }
 
-    public void delete() {
+    public synchronized void delete() {
         for (T order : Orders) {
-            if (order.isStatus()) {
+            //if (order.isStatus()) {
                 Orders.remove();
-            }
+            //}
         }
     }
 

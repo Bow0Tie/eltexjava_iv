@@ -6,6 +6,7 @@ import Ru.eltex.app.Labs.Enums.Surname;
 import Ru.eltex.app.Labs.Shop.Cart;
 import Ru.eltex.app.Labs.Shop.Credentials;
 import Ru.eltex.app.Labs.Shop.Orders;
+import Ru.eltex.app.Labs.Thread.Generator;
 
 import java.util.UUID;
 

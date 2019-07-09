@@ -1,9 +1,5 @@
 package Ru.eltex.app.Labs.Thread;
 
-public class ACheck implements Runnable {
+public abstract class ACheck extends Thread {
 
-    @Override
-    public void run() {
-
-    }
 }

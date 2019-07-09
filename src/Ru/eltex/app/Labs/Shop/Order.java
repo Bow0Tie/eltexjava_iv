@@ -1,29 +1,31 @@
 package Ru.eltex.app.Labs.Shop;
 
 import java.sql.Date;
+import java.sql.Time;
+import java.util.Random;
 
 public class Order {
 
     private boolean status;
-    private Date createtime;
-    private Date waittime;
+    private Time createtime;
+    private Time waittime;
 
     private Cart cart;
     private Credentials credentials;
 
-    private long a = 3600000; // Начальное значение диапазона - "от"
-    private long b = 7200000; // Конечное значение диапазона - "до", 7200000 = 2 часа
-    private long random_time = a + (long) (Math.random() * b);
+    Random rnd = new Random(System.currentTimeMillis());
+
+    long random_time = 1000 + rnd.nextInt(30000 - 1000 + 1);
 
     public Order(Cart cart, Credentials credentials) {
         status = false;
-        createtime = new Date(System.currentTimeMillis());
-        waittime = new Date(createtime.getTime() + random_time);
+        createtime = new Time(System.currentTimeMillis());
+        waittime = new Time(createtime.getTime() + random_time);
         this.cart = cart;
         this.credentials = credentials;
     }
 
-    public Date getWaittime() {
+    public Time getWaittime() {
         return waittime;
     }
 

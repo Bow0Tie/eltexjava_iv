@@ -6,6 +6,9 @@ import Ru.eltex.app.Labs.Enums.Surname;
 import Ru.eltex.app.Labs.Shop.Cart;
 import Ru.eltex.app.Labs.Shop.Credentials;
 import Ru.eltex.app.Labs.Shop.Orders;
+import Ru.eltex.app.Labs.Thread.ACheckDone;
+import Ru.eltex.app.Labs.Thread.ACheckWait;
+import Ru.eltex.app.Labs.Thread.Generator;
 
 public class Main {
 
@@ -15,14 +18,18 @@ public class Main {
     private static Generator g2 = new Generator();
     private static Generator g3 = new Generator();
     private static Generator g4 = new Generator();
+    private static ACheckWait w1 = new ACheckWait();
+    private static ACheckDone d1 = new ACheckDone();
 
 
     public static void main(String[] args) throws InterruptedException {
         int objectnum = Integer.parseInt(args[0]);
         int i;
-        Cart cart2 = new Cart(2);
-        Credentials Yana = new Credentials(Surname.Chertkova, Imena.Yana, Otchestva.Viktorovna, "322@mail.ru");
-        //orders.makepurchase(Yana, cart2);
+//        Cart cart2 = new Cart(2);
+//        Credentials Yana = new Credentials(Surname.Chertkova, Imena.Yana, Otchestva.Viktorovna, "322@mail.ru");
+//        orders.makepurchase(Yana, cart2);
+        //Thread wait = new Thread(w1);
+        //Thread done = new Thread(d1);
         System.out.println("Сформирован заказ для Яны");
         System.out.println("Запускаем первый генератор");
         g1.start();
@@ -41,8 +48,18 @@ public class Main {
         g2.ostonovis();
         g3.ostonovis();
         g4.ostonovis();
-        Thread.sleep(200);
+        Thread.sleep(1000);
+        //Thread.sleep(1000);
+        System.out.println("Запускаем проверку готовности");
+        w1.start();
+        Thread.sleep(1000);
+        w1.ostonovis();
+        //d1.start();
+        //wait.start();
+        //done.start();
+
         orders.showorders();
+
 //        if(args[1].equals("Coffee")){
 //            for (i = 0;i != objectnum;i++){
 //                test.cart1.add(new Coffee());
