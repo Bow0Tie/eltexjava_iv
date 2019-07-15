@@ -27,7 +27,7 @@ public class Credentials {
     }
 
     void showcredentials() {
-        System.out.println("ID пользователя " + id + "\nИмя " + name + "\nФамилия " + surname + "\nОтчество " + patronymic + "\nE-mail " + e_mail);
+        System.out.println("ID пользователя: " + id + "\nИмя: " + name + "\nФамилия: " + surname + "\nОтчество: " + patronymic + "\nE-mail: " + e_mail);
     }
 
     public UUID getId() {

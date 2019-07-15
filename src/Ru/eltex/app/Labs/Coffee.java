@@ -40,7 +40,7 @@ public class Coffee extends Napitki {
 
     @Override
     public void read() {
-        System.out.println("ID товара " + ID + "\nНазвание " + getName() + "\nЦена " + getPrice() + "\nСтрана производитель " + getCountry() + "\nФирма " + getFirm() + "\nТип зерен " + CoffeeType);
+        System.out.println("ID товара: " + ID + "\nНазвание: " + getName() + "\nЦена: " + getPrice() + "\nСтрана производитель: " + getCountry() + "\nФирма: " + getFirm() + "\nТип зерен: " + CoffeeType);
     }
 
     @Override

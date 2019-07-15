@@ -48,12 +48,15 @@ public class Main {
         g2.ostonovis();
         g3.ostonovis();
         g4.ostonovis();
-        Thread.sleep(1000);
+        Thread.sleep(30000);
         //Thread.sleep(1000);
         System.out.println("Запускаем проверку готовности");
-        w1.start();
+        orders.complitecheck();
         Thread.sleep(1000);
-        w1.ostonovis();
+        orders.delete();
+//        w1.start();
+        Thread.sleep(1000);
+//        w1.ostonovis();
         //d1.start();
         //wait.start();
         //done.start();

@@ -38,7 +38,7 @@ public class Order {
     }
 
     public void showorder() {
-        System.out.println("Статус " + status + "\nВремя создания " + createtime + "\nВремя обработки " + waittime);
+        System.out.println("Статус: " + status + "\nВремя создания: " + createtime + "\nВремя обработки: " + waittime);
         cart.showcart();
         credentials.showcredentials();
     }

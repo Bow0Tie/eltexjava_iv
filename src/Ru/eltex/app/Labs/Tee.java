@@ -44,7 +44,7 @@ public class Tee extends Napitki {
 
     @Override
     public void read() {
-        System.out.println("ID товара " + ID + "\nНазвание " + getName() + "\nЦена " + getPrice() + "\nСтрана производитель " + getCountry() + "\nФирма " + getFirm() + "\nТип упаковки " + PackType);
+        System.out.println("ID товара: " + ID + "\nНазвание: " + getName() + "\nЦена: " + getPrice() + "\nСтрана производитель: " + getCountry() + "\nФирма: " + getFirm() + "\nТип упаковки: " + PackType);
     }
 
     @Override

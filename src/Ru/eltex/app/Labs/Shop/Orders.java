@@ -1,6 +1,7 @@
 package Ru.eltex.app.Labs.Shop;
 
 import java.sql.Time;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Orders<T extends Order> {
@@ -23,10 +24,17 @@ public class Orders<T extends Order> {
     }
 
     public synchronized void delete() {
-        for (T order : Orders) {
-            //if (order.isStatus()) {
-                Orders.remove();
-            //}
+//        for (int i = 0; i < Orders.size(); i++) {
+//            T element = Orders.get(i);
+//            if (element.isStatus()) {
+//                Orders.remove(element);
+//            }
+//        }
+        for (Iterator<T> iter = Orders.iterator(); iter.hasNext(); ) {
+                T element = iter.next();
+                if (element.isStatus()) {
+                    iter.remove();
+                }
         }
     }
 
