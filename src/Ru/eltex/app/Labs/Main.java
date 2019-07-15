@@ -1,10 +1,5 @@
 package Ru.eltex.app.Labs;
 
-import Ru.eltex.app.Labs.Enums.Imena;
-import Ru.eltex.app.Labs.Enums.Otchestva;
-import Ru.eltex.app.Labs.Enums.Surname;
-import Ru.eltex.app.Labs.Shop.Cart;
-import Ru.eltex.app.Labs.Shop.Credentials;
 import Ru.eltex.app.Labs.Shop.Orders;
 import Ru.eltex.app.Labs.Thread.ACheckDone;
 import Ru.eltex.app.Labs.Thread.ACheckWait;
@@ -51,17 +46,18 @@ public class Main {
         Thread.sleep(30000);
         //Thread.sleep(1000);
         System.out.println("Запускаем проверку готовности");
-        orders.complitecheck();
+        //orders.showorders();
+        w1.start();
+        Thread.sleep(5000);
+        w1.ostonovis();
+//        orders.delete();
         Thread.sleep(1000);
-        orders.delete();
-//        w1.start();
-        Thread.sleep(1000);
-//        w1.ostonovis();
+        //orders.showorders();
         //d1.start();
         //wait.start();
         //done.start();
 
-        orders.showorders();
+
 
 //        if(args[1].equals("Coffee")){
 //            for (i = 0;i != objectnum;i++){
@@ -95,11 +91,11 @@ public class Main {
 
     }
 
-    public static synchronized Orders getOrders() {
+    public static Orders getOrders() {
         return orders;
     }
 
-    public static synchronized void setOrders(Orders orders) {
+    public static void setOrders(Orders orders) {
         Main.orders = orders;
     }
 }

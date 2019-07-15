@@ -8,6 +8,12 @@ public class Orders<T extends Order> {
 
     private LinkedList<T> Orders = new LinkedList<>();
 
+    public Orders() {}
+
+    public Orders(Orders other) {
+        this.Orders.addAll(other.Orders);
+    }
+
     public synchronized void makepurchase(Credentials credentials, Cart cart) {
 
         Orders.add((T) new Order(cart, credentials));
@@ -31,10 +37,10 @@ public class Orders<T extends Order> {
 //            }
 //        }
         for (Iterator<T> iter = Orders.iterator(); iter.hasNext(); ) {
-                T element = iter.next();
-                if (element.isStatus()) {
-                    iter.remove();
-                }
+            T element = iter.next();
+            if (element.isStatus()) {
+                iter.remove();
+            }
         }
     }
 

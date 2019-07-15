@@ -9,14 +9,10 @@ public class ACheckWait extends ACheck {
     @Override
     public void run() {
         while (!finish) {
-            Orders localorders = Main.getOrders();
+            Orders localorders = new Orders(Main.getOrders());
+            localorders.showorders();
             localorders.complitecheck();
             Main.setOrders(localorders);
-            try {
-                Thread.sleep(5000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
         }
     }
 
