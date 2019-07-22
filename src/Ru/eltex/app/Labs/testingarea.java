@@ -18,10 +18,6 @@ public class testingarea {
     Credentials Yana = new Credentials(Surname.Chertkova, Imena.Yana, Otchestva.Viktorovna, "322@mail.ru");
     private Orders orders = new Orders();
     UUID searchID = UUID.randomUUID();
-    private static Generator g1 = new Generator();
-    private static Generator g2 = new Generator();
-    private static Generator g3 = new Generator();
-    private static Generator g4 = new Generator();
 
     void tesing() throws InterruptedException {
 //        cart1.zapolnit();

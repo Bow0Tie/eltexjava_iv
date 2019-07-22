@@ -5,54 +5,60 @@ import Ru.eltex.app.Labs.Thread.ACheckDone;
 import Ru.eltex.app.Labs.Thread.ACheckWait;
 import Ru.eltex.app.Labs.Thread.Generator;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class Main {
 
     private static Orders orders = new Orders();
 
-    private static Generator g1 = new Generator();
-    private static Generator g2 = new Generator();
-    private static Generator g3 = new Generator();
-    private static Generator g4 = new Generator();
-    private static ACheckWait w1 = new ACheckWait();
-    private static ACheckDone d1 = new ACheckDone();
-
 
     public static void main(String[] args) throws InterruptedException {
-        int objectnum = Integer.parseInt(args[0]);
-        int i;
+//        int objectnum = Integer.parseInt(args[0]);
+//        int i;
 //        Cart cart2 = new Cart(2);
 //        Credentials Yana = new Credentials(Surname.Chertkova, Imena.Yana, Otchestva.Viktorovna, "322@mail.ru");
 //        orders.makepurchase(Yana, cart2);
-        //Thread wait = new Thread(w1);
+
+        ExecutorService executor1 = Executors.newCachedThreadPool();
+        ExecutorService executor2 = Executors.newCachedThreadPool();
+        Main main = new Main();
+        Generator g1 = new Generator(main);
+        Generator g2 = new Generator(main);
+        Generator g3 = new Generator(main);
+        Generator g4 = new Generator(main);
         //Thread done = new Thread(d1);
-        System.out.println("Сформирован заказ для Яны");
-        System.out.println("Запускаем первый генератор");
-        g1.start();
-        System.out.println("Ждем 1 милисекунд");
-        Thread.sleep(1);
-        g2.start();
-        System.out.println("Ждем 1 милисекунд");
-        Thread.sleep(1);
-        g3.start();
-        System.out.println("Ждем 1 милисекунд");
-        Thread.sleep(1);
-        g4.start();
-        System.out.println("Ждем 1 милисекунд");
-        Thread.sleep(1);
-        g1.ostonovis();
-        g2.ostonovis();
-        g3.ostonovis();
-        g4.ostonovis();
+        //g1.start();
+        executor1.execute(g1);
+        Thread.sleep(1000);
+        executor1.execute(g2);
+        //g2.start();
+        Thread.sleep(1000);
+        executor1.execute(g3);
+        //g3.start();
+        Thread.sleep(1000);
+        executor1.execute(g4);
+        //g4.start();
+        Thread.sleep(1001);
+        executor1.shutdownNow();
+        System.out.println("были выключены генераторы");
+//        g1.ostonovis();
+//        g2.ostonovis();
+//        g3.ostonovis();
+//        g4.ostonovis();
         Thread.sleep(30000);
         //Thread.sleep(1000);
         System.out.println("Запускаем проверку готовности");
         //orders.showorders();
-        w1.start();
+        ACheckWait w1 = new ACheckWait(main);
+        executor2.execute(w1);
         Thread.sleep(5000);
-        w1.ostonovis();
+        ACheckDone d1 = new ACheckDone(main);
+        executor2.execute(d1);
+        Thread.sleep(5000);
+        executor2.shutdownNow();
+        orders.showorders();
 //        orders.delete();
-        Thread.sleep(1000);
-        //orders.showorders();
         //d1.start();
         //wait.start();
         //done.start();
@@ -91,11 +97,11 @@ public class Main {
 
     }
 
-    public static Orders getOrders() {
+    public synchronized Orders getOrders() {
         return orders;
     }
 
-    public static void setOrders(Orders orders) {
+    public synchronized void setOrders(Orders orders) {
         Main.orders = orders;
     }
 }

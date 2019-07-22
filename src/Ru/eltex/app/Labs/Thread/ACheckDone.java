@@ -1,20 +1,23 @@
 package Ru.eltex.app.Labs.Thread;
 
 import Ru.eltex.app.Labs.Main;
-import Ru.eltex.app.Labs.Shop.Orders;
 
-public class ACheckDone extends ACheck {
-    private boolean finish = true;
+public class ACheckDone implements Runnable {
+    private Main Orders;
+
+    public ACheckDone(Main Orders) {
+        this.Orders = Orders;
+    }
 
     @Override
     public void run() {
-        while (!finish) {
-            Orders localorders = Main.getOrders();
-            localorders.delete();
-            Main.setOrders(localorders);
+        while (true) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                return;
+            }
+            Orders.getOrders().delete();
         }
-    }
-    public void ostonovis() {
-        finish = true;
     }
 }
