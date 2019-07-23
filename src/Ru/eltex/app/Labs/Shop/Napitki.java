@@ -1,15 +1,15 @@
-package Ru.eltex.app.Labs;
+package Ru.eltex.app.Labs.Shop;
 
 import Ru.eltex.app.Labs.Enums.Country;
 import Ru.eltex.app.Labs.Enums.Firms;
 import Ru.eltex.app.Labs.Enums.Names;
+import Ru.eltex.app.Labs.Shop.ICrudAction;
 
-import java.util.Scanner;
 import java.util.UUID;
 
-abstract public class Napitki implements ICrudAction {
-    public static int count;
-    protected UUID ID;
+abstract class Napitki implements ICrudAction {
+    static int count;
+    UUID ID;
     private Names name;
     private float price;
     private Firms firm;

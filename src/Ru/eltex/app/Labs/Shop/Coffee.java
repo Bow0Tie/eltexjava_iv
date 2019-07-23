@@ -1,19 +1,15 @@
-package Ru.eltex.app.Labs;
+package Ru.eltex.app.Labs.Shop;
 
-import Ru.eltex.app.Labs.Enums.Firms;
-import Ru.eltex.app.Labs.Enums.Names;
-import Ru.eltex.app.Labs.Enums.packtypeTee;
-import Ru.eltex.app.Labs.Enums.Country;
+import Ru.eltex.app.Labs.Enums.*;
 
 import java.util.Random;
 import java.util.UUID;
 
+public class Coffee extends Napitki {
+    private CoffeeType CoffeeType;
 
-public class Tee extends Napitki {
-    private packtypeTee PackType;
-
-    public Tee() {
-        PackType = packtypeTee.getRandomPack();
+    public Coffee() {
+        CoffeeType = Ru.eltex.app.Labs.Enums.CoffeeType.getCoffeeType();
         setName(Names.getRandomName());
         setCountry(Country.getRandomCountry());
         setFirm(Firms.getRandomFirms());
@@ -23,8 +19,8 @@ public class Tee extends Napitki {
         ID = UUID.randomUUID();
     }
 
-    public Tee(packtypeTee packtype, Names name, Country country, Firms firm, float price) {
-        PackType = packtype;
+    public Coffee(CoffeeType coffeeType, Names name, Country country, Firms firm, float price) {
+        CoffeeType = coffeeType;
         setName(name);
         setCountry(country);
         setFirm(firm);
@@ -34,17 +30,17 @@ public class Tee extends Napitki {
 
     @Override
     public void create() {
-        count++;
-        setName(Names.Бай_Хуа_Сянь_Цзы_Ангел_цветов);
-        setCountry(Country.Вьетнам);
-        setFirm(Firms.Tess);
-        setPrice(199.99f);
-        PackType = packtypeTee.Бумажная_упаковка;
+        Napitki.count++;
+        setName(Names.ЖОКЕЙ_традиционный);
+        setCountry(Country.Бразилия);
+        setFirm(Firms.Molinari);
+        setPrice(299.99f);
+        CoffeeType = Ru.eltex.app.Labs.Enums.CoffeeType.Арабика;
     }
 
     @Override
     public void read() {
-        System.out.println("ID товара: " + ID + "\nНазвание: " + getName() + "\nЦена: " + getPrice() + "\nСтрана производитель: " + getCountry() + "\nФирма: " + getFirm() + "\nТип упаковки: " + PackType);
+        System.out.println("ID товара: " + ID + "\nНазвание: " + getName() + "\nЦена: " + getPrice() + "\nСтрана производитель: " + getCountry() + "\nФирма: " + getFirm() + "\nТип зерен: " + CoffeeType);
     }
 
     @Override
@@ -55,21 +51,21 @@ public class Tee extends Napitki {
 //        setCountry(sc.nextLine());
 //        System.out.println("Фирма производитель");
 //        setFirm(sc.nextLine());
-//        System.out.println("Цена чая");
+//        System.out.println("Цена кофе");
 //        setPrice(sc.nextFloat());
 //        sc.nextLine();
-//        System.out.println("Тип упаковки");
-//        PackType = sc.nextLine();
+//        System.out.println("Тип кофейных зерен");
+//        CoffeeType = sc.nextLine();
     }
 
     @Override
     public void delete() {
-        count--;
+        Napitki.count--;
         setName(null);
         setCountry(null);
         setFirm(null);
         setPrice(0f);
-        PackType = null;
+        CoffeeType = null;
     }
-}
 
+}

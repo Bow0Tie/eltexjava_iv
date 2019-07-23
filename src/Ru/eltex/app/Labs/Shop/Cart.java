@@ -1,9 +1,6 @@
 package Ru.eltex.app.Labs.Shop;
 
-import Ru.eltex.app.Labs.Coffee;
 import Ru.eltex.app.Labs.Enums.*;
-import Ru.eltex.app.Labs.Napitki;
-import Ru.eltex.app.Labs.Tee;
 
 import java.util.*;
 

@@ -6,8 +6,6 @@ import Ru.eltex.app.Labs.Enums.Surname;
 import Ru.eltex.app.Labs.Main;
 import Ru.eltex.app.Labs.Shop.Cart;
 import Ru.eltex.app.Labs.Shop.Credentials;
-import Ru.eltex.app.Labs.Shop.Order;
-import Ru.eltex.app.Labs.Shop.Orders;
 
 import java.util.Random;
 
