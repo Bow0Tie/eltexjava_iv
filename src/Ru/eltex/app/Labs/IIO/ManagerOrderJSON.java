@@ -6,12 +6,12 @@ public class ManagerOrderJSON extends AManageOrder {
     private Orders orders;
 
     @Override
-    public void readById() {
+    public void readById(int id) {
 
     }
 
     @Override
-    public void saveById() {
+    public void saveById(int id) {
 
     }
 

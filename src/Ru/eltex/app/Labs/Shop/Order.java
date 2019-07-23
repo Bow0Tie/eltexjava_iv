@@ -10,8 +10,10 @@ public class Order {
     private Time createtime;
     private Time waittime;
 
+    private int id;
     private Cart cart;
     private Credentials credentials;
+
 
     Random rnd = new Random(System.currentTimeMillis());
 
@@ -23,6 +25,7 @@ public class Order {
         waittime = new Time(createtime.getTime() + random_time);
         this.cart = cart;
         this.credentials = credentials;
+        id++;
     }
 
     public Time getWaittime() {
@@ -38,7 +41,7 @@ public class Order {
     }
 
     public void showorder() {
-        System.out.println("Статус: " + status + "\nВремя создания: " + createtime + "\nВремя обработки: " + waittime);
+        System.out.println("Статус: " + status + "\nВремя создания: " + createtime + "\nВремя обработки: " + waittime + "\nID заказа: " + id);
         cart.showcart();
         credentials.showcredentials();
     }

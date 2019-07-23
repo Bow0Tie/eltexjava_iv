@@ -1,9 +1,11 @@
 package Ru.eltex.app.Labs.IIO;
 
-public interface IOrder {
-    void readById();
+import java.util.UUID;
 
-    void saveById();
+public interface IOrder {
+    void readById(int id);
+
+    void saveById(int id);
 
     void readAll();
 
