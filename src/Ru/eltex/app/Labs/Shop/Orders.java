@@ -5,6 +5,10 @@ import java.util.LinkedList;
 
 public class Orders<T extends Order> {
 
+    public LinkedList<T> getOrders() {
+        return Orders;
+    }
+
     private LinkedList<T> Orders = new LinkedList<>();
 
     public Orders() {

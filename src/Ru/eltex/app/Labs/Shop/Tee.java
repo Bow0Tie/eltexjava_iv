@@ -6,11 +6,12 @@ import Ru.eltex.app.Labs.Enums.packtypeTee;
 import Ru.eltex.app.Labs.Enums.Country;
 import Ru.eltex.app.Labs.Shop.Napitki;
 
+import java.io.Serializable;
 import java.util.Random;
 import java.util.UUID;
 
 
-public class Tee extends Napitki {
+public class Tee extends Napitki implements Serializable {
     private packtypeTee PackType;
 
     public Tee() {

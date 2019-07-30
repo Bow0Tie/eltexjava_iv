@@ -4,9 +4,10 @@ import Ru.eltex.app.Labs.Enums.Imena;
 import Ru.eltex.app.Labs.Enums.Otchestva;
 import Ru.eltex.app.Labs.Enums.Surname;
 
+import java.io.Serializable;
 import java.util.UUID;
 
-public class Credentials {
+public class Credentials implements Serializable {
 
     private UUID id;
     private Surname surname;

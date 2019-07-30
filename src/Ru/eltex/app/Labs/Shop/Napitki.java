@@ -5,16 +5,17 @@ import Ru.eltex.app.Labs.Enums.Firms;
 import Ru.eltex.app.Labs.Enums.Names;
 import Ru.eltex.app.Labs.Shop.ICrudAction;
 
+import java.io.Serializable;
 import java.util.UUID;
 
-abstract class Napitki implements ICrudAction {
+abstract class Napitki implements ICrudAction, Serializable {
     static int count;
     UUID ID;
     private Names name;
     private float price;
     private Firms firm;
     private Country country;
-    //Scanner sc = new Scanner(System.in);
+
     public Names getName() {
         return name;
     }

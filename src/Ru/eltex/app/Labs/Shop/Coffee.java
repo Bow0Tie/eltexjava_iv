@@ -2,10 +2,11 @@ package Ru.eltex.app.Labs.Shop;
 
 import Ru.eltex.app.Labs.Enums.*;
 
+import java.io.Serializable;
 import java.util.Random;
 import java.util.UUID;
 
-public class Coffee extends Napitki {
+public class Coffee extends Napitki implements Serializable {
     private CoffeeType CoffeeType;
 
     public Coffee() {

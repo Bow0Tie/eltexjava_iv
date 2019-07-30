@@ -2,9 +2,10 @@ package Ru.eltex.app.Labs.Shop;
 
 import Ru.eltex.app.Labs.Enums.*;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Cart<T extends Napitki> {
+public class Cart<T extends Napitki> implements Serializable {
 
     private List<T> cart = new ArrayList<>();
     private Set<UUID> uuids = new HashSet<>();

@@ -1,10 +1,10 @@
 package Ru.eltex.app.Labs.Shop;
 
-import java.sql.Date;
+import java.io.Serializable;
 import java.sql.Time;
 import java.util.Random;
 
-public class Order {
+public class Order implements Serializable {
 
     private boolean status;
     private Time createtime;
@@ -25,7 +25,7 @@ public class Order {
         waittime = new Time(createtime.getTime() + random_time);
         this.cart = cart;
         this.credentials = credentials;
-        id++;
+        id = 1 + rnd.nextInt(20000 - 1 + 1);
     }
 
     public Time getWaittime() {
