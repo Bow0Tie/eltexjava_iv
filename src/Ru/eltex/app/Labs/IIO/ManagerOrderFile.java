@@ -29,8 +29,12 @@ public class ManagerOrderFile extends AManageOrder {
     @Override
     public void readAll() {
         try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("/home/ivan/orders.bin"))) {
-            while (objectInputStream.readObject() == null) {
-                orders.getOrders().getOrders().add((Order) objectInputStream.readObject());
+            try {
+                while (true) {
+                    orders.getOrders().getOrders().add((Order) objectInputStream.readObject());
+                }
+            } catch (EOFException e){
+                return;
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
