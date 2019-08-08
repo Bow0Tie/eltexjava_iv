@@ -8,6 +8,7 @@ import java.util.LinkedList;
 
 public class ManagerOrderFile extends AManageOrder {
     private static final String ORDERSPATH = "/home/ivan/orders.bin";
+    private static final String ORDERPATH = "/home/ivan/order.bin";
     private Main orders;
     private LinkedList<Order> order;
 
@@ -18,7 +19,7 @@ public class ManagerOrderFile extends AManageOrder {
 
     @Override
     public void readById(int id) {
-        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(ORDERSPATH))) {
+        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(ORDERPATH))) {
             try {
                 while (true) {
                     Order ProveryemiyOrder = (Order) objectInputStream.readObject();
@@ -36,7 +37,7 @@ public class ManagerOrderFile extends AManageOrder {
 
     @Override
     public void saveById(int id) {
-        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(ORDERSPATH))) {
+        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(ORDERPATH))) {
             for (Order order : order) {
                 if (order.getId() == id) {
                     objectOutputStream.writeObject(order);

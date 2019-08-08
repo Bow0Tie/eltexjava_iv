@@ -1,6 +1,7 @@
 package Ru.eltex.app.Labs;
 
 import Ru.eltex.app.Labs.IIO.ManagerOrderFile;
+import Ru.eltex.app.Labs.IIO.ManagerOrderJSON;
 import Ru.eltex.app.Labs.Shop.Orders;
 import Ru.eltex.app.Labs.Thread.ACheckDone;
 import Ru.eltex.app.Labs.Thread.ACheckWait;
@@ -24,6 +25,7 @@ public class Main {
         Generator g3 = new Generator(main);
         Generator g4 = new Generator(main);
         ManagerOrderFile save = new ManagerOrderFile(main);
+        ManagerOrderJSON saveJ = new ManagerOrderJSON(main);
 //        executor1.execute(g1);
 //        Thread.sleep(1000);
 //        executor1.execute(g2);
@@ -45,7 +47,9 @@ public class Main {
 //        executor2.shutdownNow();
 //        orders.showorders();
 //        save.saveAll();
-        save.readAll();
+//        save.readAll();
+//        saveJ.saveAll();
+        saveJ.readAll();
         orders.showorders();
     }
 
