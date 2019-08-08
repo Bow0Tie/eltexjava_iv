@@ -45,4 +45,8 @@ public class Order implements Serializable {
         cart.showcart();
         credentials.showcredentials();
     }
+
+    public int getId() {
+        return id;
+    }
 }

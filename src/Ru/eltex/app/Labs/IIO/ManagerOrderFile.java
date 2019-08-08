@@ -7,6 +7,7 @@ import java.io.*;
 import java.util.LinkedList;
 
 public class ManagerOrderFile extends AManageOrder {
+    private static final String ORDERSPATH = "/home/ivan/orders.bin";
     private Main orders;
     private LinkedList<Order> order;
 
@@ -17,42 +18,56 @@ public class ManagerOrderFile extends AManageOrder {
 
     @Override
     public void readById(int id) {
-
-
+        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(ORDERSPATH))) {
+            try {
+                while (true) {
+                    Order ProveryemiyOrder = (Order) objectInputStream.readObject();
+                    if (ProveryemiyOrder.getId() == id) {
+                        orders.getOrders().getOrders().add(ProveryemiyOrder);
+                    }
+                }
+            } catch (EOFException e) {
+                return;
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void saveById(int id) {
-
+        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(ORDERSPATH))) {
+            for (Order order : order) {
+                if (order.getId() == id) {
+                    objectOutputStream.writeObject(order);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void readAll() {
-        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("/home/ivan/orders.bin"))) {
+        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(ORDERSPATH))) {
             try {
                 while (true) {
                     orders.getOrders().getOrders().add((Order) objectInputStream.readObject());
                 }
-            } catch (EOFException e){
+            } catch (EOFException e) {
                 return;
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
 
     @Override
     public void saveAll() {
-        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("/home/ivan/orders.bin"))) {
+        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(ORDERSPATH))) {
             for (Order order : order) {
                 objectOutputStream.writeObject(order);
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
