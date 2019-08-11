@@ -2,6 +2,7 @@ package Ru.eltex.app.Labs.IIO;
 
 import Ru.eltex.app.Labs.Main;
 import Ru.eltex.app.Labs.Shop.Order;
+import Ru.eltex.app.Labs.Shop.Orders;
 import com.google.gson.FieldAttributes;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -36,10 +37,9 @@ public class ManagerOrderJSON extends AManageOrder {
     @Override
     public void readAll() {
         try (Scanner scanner = new Scanner(new FileReader(ORDERSPATH))) {
-            while (scanner.hasNextLine()) {
-                Order order = GSON.fromJson(scanner.nextLine(),Order.class);
-                orders.getOrders().getOrders().add(order);
-            }
+                Orders result = GSON.fromJson(scanner.nextLine(),Orders.class);
+                result.showorders();
+                orders.setOrders(result);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -48,10 +48,8 @@ public class ManagerOrderJSON extends AManageOrder {
     @Override
     public void saveAll() {
         try (FileWriter fileWriter = new FileWriter(ORDERSPATH)) {
-            for (Order order : order) {
-                String json = GSON.toJson(order);
-                fileWriter.write(json + "\n");
-            }
+            String json = GSON.toJson(orders.getOrders());
+            fileWriter.write(json + "\n");
         } catch (IOException e) {
             e.printStackTrace();
         }
