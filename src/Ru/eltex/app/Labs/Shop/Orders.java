@@ -47,4 +47,7 @@ public class Orders<T extends Order> {
             tyt.showorder();
         }
     }
+    public void add(T order) {
+        Orders.add(order);
+    }
 }

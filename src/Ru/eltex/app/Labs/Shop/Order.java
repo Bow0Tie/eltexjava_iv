@@ -14,12 +14,9 @@ public class Order implements Serializable {
     private Cart cart;
     private Credentials credentials;
 
-
-    Random rnd = new Random(System.currentTimeMillis());
-
-    long random_time = 1000 + rnd.nextInt(30000 - 1000 + 1);
-
     public Order(Cart cart, Credentials credentials) {
+        Random rnd = new Random(System.currentTimeMillis());
+        long random_time = 1000 + rnd.nextInt(30000 - 1000 + 1);
         status = false;
         createtime = new Time(System.currentTimeMillis());
         waittime = new Time(createtime.getTime() + random_time);
@@ -48,5 +45,17 @@ public class Order implements Serializable {
 
     public int getId() {
         return id;
+    }
+
+    public void setCreatetime(Time createtime) {
+        this.createtime = createtime;
+    }
+
+    public void setWaittime(Time waittime) {
+        this.waittime = waittime;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

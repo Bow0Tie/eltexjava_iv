@@ -8,13 +8,14 @@ import java.util.*;
 public class Cart<T extends Napitki> implements Serializable {
 
     private List<T> cart = new ArrayList<>();
-    private Set<UUID> uuids = new HashSet<>();
-    Random rnd = new Random(System.currentTimeMillis());
+    private transient Set<UUID> uuids = new HashSet<>();
+
 
     public Cart() {
     }
 
     public Cart(int num) {
+        Random rnd = new Random(System.currentTimeMillis());
         for (int i = 0; i < num; i++) {
             float price = 50 + rnd.nextInt(2000 - 50 + 1);
             cart.add((T) new Coffee(CoffeeType.getCoffeeType(), Names.getRandomName(), Country.getRandomCountry(), Firms.getRandomFirms(), price));
