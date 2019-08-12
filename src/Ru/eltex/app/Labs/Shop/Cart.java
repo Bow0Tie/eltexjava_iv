@@ -29,7 +29,7 @@ public class Cart<T extends Napitki> implements Serializable {
     public void add(T obj) {
         cart.add(obj);
         uuids.add(obj.getID());
-        System.out.println(saerch(obj.getID()));
+//        System.out.println(saerch(obj.getID()));
     }
 
     public void delete(T obj) {

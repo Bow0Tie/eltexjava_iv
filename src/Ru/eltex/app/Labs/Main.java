@@ -50,7 +50,7 @@ public class Main {
 //        save.readAll();
 //        saveJ.saveAll();
         saveJ.readAll();
-        orders.showorders();
+//        orders.showorders();
     }
 
     public synchronized Orders getOrders() {
