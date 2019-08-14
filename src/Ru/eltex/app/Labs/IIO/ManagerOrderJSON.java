@@ -34,12 +34,31 @@ public class ManagerOrderJSON extends AManageOrder {
 
     @Override
     public void readById(int id) {
-
+        try (Scanner scan = new Scanner(new FileReader(ORDERPATH))) {
+            while (scan.hasNextLine()) {
+                String json = scan.nextLine();
+                Order forScan = GSON.fromJson(json, Order.class);
+                if (forScan.getId() == id) {
+                    orders.getOrders().getOrders().add(forScan);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void saveById(int id) {
-
+        try (FileWriter fileWriter = new FileWriter(ORDERPATH)) {
+            for (Order order : order) {
+                if (order.getId() == id) {
+                    String json = GSON.toJson(order);
+                    fileWriter.write(json + "\n");
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -49,10 +68,6 @@ public class ManagerOrderJSON extends AManageOrder {
                 String json = scan.nextLine();
                 orders.getOrders().getOrders().add(GSON.fromJson(json, Order.class));
             }
-//            System.out.println(json);
-//            Orders result = GSON.fromJson(json.toString(), Orders.class);
-//            result.showorders();
-//            orders.setOrders(result);
         } catch (IOException e) {
             e.printStackTrace();
         }
